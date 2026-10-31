@@ -1,0 +1,99 @@
+================================================================
+  SITIO WEB — JESÚS HUMBERTO DÁVILA CADENA
+  Trayectoria de Logros Académicos 2010–2026
+  Paquete estático listo para subir a cualquier servidor
+================================================================
+
+QUÉ ES ESTE PAQUETE
+-------------------
+Sitio web 100% estático: NO necesita base de datos, NO necesita
+Node.js, NO necesita instalar nada. Solo se sube y funciona.
+
+CONTENIDO (todo debe subirse respetando esta estructura)
+--------------------------------------------------------
+index.html              Página principal (obligatorio)
+css/                    Hojas de estilo del sitio
+fonts/                  Tipografías (Playfair Display e Inter)
+js/                     Interactividad (animaciones, visor de fotos
+                        y videos, menú móvil)
+fotos/                  Fotografías por categoría (debate, primaria,
+                        secundaria, preparatoria, isj) y las 10
+                        publicaciones de la sección Menciones
+                        (fotos/publicaciones/)
+media/                  Los 12 videos del documental (.mp4)
+media/posters/          Imágenes de portada de cada video
+
+LA SECCIÓN "MENCIONES"
+----------------------
+Contiene las 10 publicaciones reales (sin repetir) donde se
+menciona a Jesús Humberto Dávila Cadena: cada tarjeta muestra la
+captura (ampliable con un toque), la fuente, la descripción y un
+botón con el enlace para consultarla en Facebook (la Publicación
+10 tiene enlace directo a la publicación original). La tarjeta de
+Noticias Telemax incluye además el botón "Ver video del debate".
+
+CÓMO SUBIRLO A TU SERVIDOR (para que se vea desde cualquier
+dispositivo aunque tu computadora esté apagada)
+----------------------------------------------------------
+OPCIÓN RECOMENDADA — Netlify (GRATIS y permanente):
+  1. Entra a https://app.netlify.com/drop desde tu computadora.
+  2. Crea tu cuenta gratis (puedes usar tu cuenta de Google).
+  3. Arrastra la carpeta completa jesus-davila-trayectoria
+     (o el contenido del ZIP ligero) a la zona de Drop.
+  4. Al terminar, Netlify te da una dirección pública tipo
+     https://nombredelsitio.netlify.app — esa dirección ya
+     funciona en cualquier teléfono o computadora del mundo,
+     esté apagada tu PC o no.
+  5. Opcional: en Site settings > Change site name puedes
+     poner un nombre bonito, ej. jesushumberto.netlify.app
+  Nota: si el ZIP COMPLETO pesa demasiado para arrastrarlo,
+  usa el ZIP LIGERO (mismo sitio con los videos comprimidos,
+  menos de 250 MB), que es el que se sube sin problema.
+
+OPCIÓN A — Hosting con cPanel o panel de control:
+  1. Entra a tu cPanel y abre "Administrador de archivos".
+  2. Abre la carpeta public_html (o la raíz de tu dominio).
+  3. Sube el ZIP y usa "Extraer" dentro de public_html.
+  4. Importante: el contenido de la carpeta jesus-davila-trayectoria
+     debe quedar DIRECTAMENTE en public_html, de forma que quede:
+     public_html/index.html
+     public_html/fotos/...
+     public_html/media/...
+
+OPCIÓN B — FTP (FileZilla o similar):
+  1. Conéctate con tu host, usuario y contraseña.
+  2. Entra a public_html y arrastra TODO el contenido de esta
+     carpeta (no la carpeta contenedora, sino lo que hay dentro).
+
+OPCIÓN C — Vercel / Cloudflare Pages (también gratis):
+  1. Entra a vercel.com/new o pages.cloudflare.com
+  2. Sube la carpeta del sitio y te dan una URL pública.
+  (Cloudflare limita cada archivo a 25 MB: ahí sube la versión
+  ligera o pide apoyo para partir los videos largos.)
+
+PROBAR EN TU COMPUTADORA (sin servidor)
+---------------------------------------
+Opción simple: dale doble clic a index.html.
+Opción más parecida al servidor real:
+  1. Abre una terminal en esta carpeta.
+  2. Ejecuta:  python -m http.server 8000
+  3. Abre http://localhost:8000 en el navegador.
+
+NOTAS TÉCNICAS
+--------------
+- Todas las rutas son RELATIVAS: puedes subirlo a la raíz del
+  dominio o a cualquier subcarpeta (ej. mitiempo.com/logros/) y
+  funcionará igual, sin tocar nada.
+- Los videos MP4 (H.264 + faststart) se reproducen con el
+  reproductor nativo del navegador. Si notas que no puedes
+  adelantar el video, pide a tu hosting que active las peticiones
+  de rango (Range requests), que vienen activadas por defecto.
+- Las miniaturas (media/posters) se muestran antes de dar play,
+  así el sitio carga ligero aunque los videos pesen cientos de MB.
+
+CRÉDITOS
+--------
+Documental de trayectoria estudiantil de Jesús Humberto Dávila
+Cadena (CBTis 206, Hermosillo, Sonora). Material de apoyo para el
+Premio La Juventud en la Disciplina del Logro Académico —
+Instituto Sonorense de la Juventud, Sonora, México.
